@@ -1,0 +1,33 @@
+{% extends 'stockexchange/base.html' %}
+{% block main_content %}
+
+
+{% for player in players %}
+    <div><strong>{{player.player_name}} </strong> Amount: {{player.player_starting_amount}}
+    <table border="1px solid black" >
+        <thead>
+            <th>Company</th>
+            <th>Values</th>
+        </thead>
+        <tbody>
+            {% for cards in player.player_cards %}
+            <tr>
+                <td>{{cards.card_company}}</td>
+                <td>{{cards.card_value}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        <div><strong>Action</strong></div>
+        <td id={{ cards.card_company}}>
+                    <input type="submit" value="Buy" id="buy"/>
+                    <input type="submit" value="Sell" id="sell"/>
+                    <input type="submit" value="Pass" id="pass"/>
+                </td>
+    <br/><br/>
+    </div>
+{% endfor %}
+<hr/>
+{% include 'stockexchange/price_sheet.html' %}
+
+{% endblock %}

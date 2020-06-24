@@ -1,0 +1,16 @@
+{% extends 'stockexchange/base.html' %}
+{% block main_content %}
+
+<h3> This is the login page.</h3>
+
+
+<form action = "game" method="POST">
+    {% csrf_token %}
+    <label>Enter number of players</label>
+    <input type="text" name="player_numbers"/>
+    <br/>
+    <br/>
+    <input type="submit" value="Join">
+</form>
+
+{% endblock %}

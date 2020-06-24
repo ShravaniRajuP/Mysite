@@ -1,0 +1,13 @@
+<table name="pricesheet" border="1px solid black">
+    Price Sheet
+    <thead>
+    {% for header in company_list.keys %}
+        <th>{{ header }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for value in company_list.values %}
+        <td>{{ value}}</td>
+    {% endfor %}
+    </tbody>
+</table>
